@@ -1,3 +1,5 @@
+export default 
+
 class Card {
     _open = false;
     _success = false;
@@ -35,12 +37,17 @@ class Card {
     }
 }
 
-let newCard = new Card(document.getElementById('game'), 7, flip);
-
-function flip (card) {
-    console.log(card);
-}
+// let newCard = new Card (document.getElementById('game'), 7, flip)
+// let newCard2 = new Card (document.getElementById('game'), 7, flip)
+// let newCard3 = new Card (document.getElementById('game'), 7, flip)
 
 
+// let newCard4 = new Card (document.getElementById('game'), 7, flip)
 
+
+
+
+// function flip (card){
+//     console.log(card)
+// }
 
