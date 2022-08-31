@@ -8,8 +8,8 @@ class Card {
         this.card = document.createElement('div');
         this.card.classList.add('card');
         this.card.textContent = number;
-       
-    
+        this.number = number;
+
         this.card.addEventListener('click', () => {
             if (this.open == false && this.success == false){
                 this.open = true;
@@ -37,20 +37,10 @@ class Card {
     }
 }
 
-let newCard = new Card (document.getElementById('game'), 7, flip)
+//let newCard = new Card (document.getElementById('game'), 1, flip)
 // let newCard2 = new Card (document.getElementById('game'), 7, flip)
 // let newCard3 = new Card (document.getElementById('game'), 7, flip)
-console.log(newCard);
-function flip(card){
-    console.log(card);
-}
-
-// let newCard4 = new Card (document.getElementById('game'), 7, flip)
-
-
-
-
-// function flip (card){
-//     console.log(card)
+//console.log(newCard);
+// function flip(card){
+//     console.log(card);
 // }
-
