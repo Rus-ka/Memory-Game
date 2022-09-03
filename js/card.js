@@ -36,11 +36,3 @@ class Card {
         return this._open;
     }
 }
-
-//let newCard = new Card (document.getElementById('game'), 1, flip)
-// let newCard2 = new Card (document.getElementById('game'), 7, flip)
-// let newCard3 = new Card (document.getElementById('game'), 7, flip)
-//console.log(newCard);
-// function flip(card){
-//     console.log(card);
-// }

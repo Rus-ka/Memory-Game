@@ -1,22 +1,22 @@
 import Card from './card.js'
 
 
-// const selectors = {
-//     boardContainer: document.querySelector('.board-container'),
-//     board: document.querySelector('.board'),
-//     moves: document.querySelector('.moves'),
-//     timer: document.querySelector('.timer'),
-//     start: document.querySelector('button'),
-//     win: document.querySelector('.win')
-// }
+const selectors = {
+    // boardContainer: document.querySelector('.board-container'),
+    // board: document.querySelector('.board'),
+    // moves: document.querySelector('.moves'),
+    timer: document.querySelector('.timer'),
+    // start: document.querySelector('button'),
+    // win: document.querySelector('.win')
+}
 
-// const state = {
-//     gameStarted: false,
-//     flippedCards: 0,
-//     totalFlips: 0,
-//     totalTime: 0,
-//     loop: null
-// }
+const state = {
+    gameStarted: false,
+    flippedCards: 0,
+    totalFlips: 0,
+    totalTime: 0,
+    loop: null
+}
 
 const startButton = document.getElementById('start_button');
 
@@ -30,6 +30,8 @@ startButton.addEventListener('click', () => {
             alert("значение для поля установлено по умолчанию (4)");
             newGame(document.getElementById('game'), 4);
             }  
+
+            
 });
 
 
@@ -39,6 +41,19 @@ function newGame(container, cardsCount){
     cardsArray =[],
     firstCard = null,
     secondCard = null;
+
+
+    state.gameStarted = true
+    // selectors.start.classList.add('disabled')
+
+    state.loop = setInterval(() => {
+        state.totalTime++
+
+        // selectors.moves.innerText = `${state.totalFlips} moves`
+        selectors.timer.innerText = `time: ${state.totalTime} sec`
+    }, 1000)
+
+
 
     for (let i = 1; i <= cardsCount / 2; i++){
         cardsNumberArray.push(i);
@@ -52,6 +67,8 @@ function newGame(container, cardsCount){
    for (const cardNumber of cardsNumberArray) {
     cardsArray.push(new Card(container, cardNumber, flip));
    }
+
+   
    //logic
    function flip (card){
    //console.log(card.number)
@@ -87,12 +104,18 @@ function newGame(container, cardsCount){
            // alert('pobeda');
             container.innerHTML = `<span class="win-text">
             You won!<br /></span>`,
+      
             cardsNumberArray  = [],
+            state.totalTime = 0,
+            state.gameStarted = false,
+            clearInterval(state.loop),
+            state.loop = null,
+            selectors.timer.innerText = `time 0 sec`,   
             cardsArray =[],
             firstCard = null,
             secondCard = null;
 
-            newGame(container, cardsCount)
+          //  newGame(container, cardsCount)
         }
    }
 
