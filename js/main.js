@@ -4,7 +4,7 @@ import Card from './card.js'
 const selectors = {
     // boardContainer: document.querySelector('.board-container'),
     // board: document.querySelector('.board'),
-    // moves: document.querySelector('.moves'),
+    moves: document.querySelector('.moves'),
     timer: document.querySelector('.timer'),
     // start: document.querySelector('button'),
     // win: document.querySelector('.win')
@@ -49,7 +49,7 @@ function newGame(container, cardsCount){
     state.loop = setInterval(() => {
         state.totalTime++
 
-        // selectors.moves.innerText = `${state.totalFlips} moves`
+        selectors.moves.innerText = `${state.totalFlips} moves`
         selectors.timer.innerText = `time: ${state.totalTime} sec`
     }, 1000)
 
@@ -72,6 +72,7 @@ function newGame(container, cardsCount){
    //logic
    function flip (card){
    //console.log(card.number)
+  
         if(firstCard!==null && secondCard!==null){
             if(firstCard.number != secondCard.number){
                 firstCard.open = false;
@@ -106,6 +107,7 @@ function newGame(container, cardsCount){
             You won!<br /></span>`,
       
             cardsNumberArray  = [],
+            state.totalFlips = 0,
             state.totalTime = 0,
             state.gameStarted = false,
             clearInterval(state.loop),
@@ -117,6 +119,7 @@ function newGame(container, cardsCount){
 
           //  newGame(container, cardsCount)
         }
+        state.totalFlips++;
    }
 
 

@@ -14,6 +14,7 @@ class Card {
             if (this.open == false && this.success == false){
                 this.open = true;
                 action(this);
+                
             }
         })
     
