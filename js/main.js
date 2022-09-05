@@ -112,6 +112,7 @@ function newGame(container, cardsCount){
             state.gameStarted = false,
             clearInterval(state.loop),
             state.loop = null,
+            selectors.moves.innerText = `0 moves`,
             selectors.timer.innerText = `time 0 sec`,   
             cardsArray =[],
             firstCard = null,
