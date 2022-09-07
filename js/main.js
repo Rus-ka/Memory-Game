@@ -39,6 +39,7 @@ function newGame(container, cardsCount){
    //Сreated field
     let cardsNumberArray  = [],
     cardsArray =[],
+
     firstCard = null,
     secondCard = null;
 
@@ -117,6 +118,8 @@ function newGame(container, cardsCount){
             cardsArray =[],
             firstCard = null,
             secondCard = null;
+            // setTimeout(document.querySelector('.win-text'))
+            setTimeout(function() {document.querySelector('.win-text').remove();}, 1000);
 
           //  newGame(container, cardsCount)
         }
